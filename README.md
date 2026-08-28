@@ -56,8 +56,12 @@ the MAX77972 charger.
 - Node 18+
 - `npm install` (only dependency is [`node-hid`](https://github.com/node-hid/node-hid))
 - The Work Louder Input app **quit** — it holds the device
-- **macOS:** grant your terminal Input Monitoring, and run these tools with `sudo`.
-  See [docs/03-macos-hid.md](docs/03-macos-hid.md); a Framer F1 does not need this, a Knob 1 does.
+- **macOS:** run these tools with `sudo`. macOS refuses HID writes to keyboard-class
+  devices, and this keyboard puts its vendor interface on the keyboard's, so it is caught by
+  that. Input Monitoring does not help -- it governs reading, not sending. See
+  [docs/03-macos-hid.md](docs/03-macos-hid.md).
+- **Windows:** nothing special needed. Each HID collection is its own interface there, so
+  the vendor interface is reachable without elevation -- browser tools work too.
 
 ## Quick start
 
