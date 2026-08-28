@@ -32,7 +32,7 @@ The file wins over eFuse. On a stock Knob 1 the eFuse user block is **entirely e
 the device runs the fallback and reports as a Knob 1. Supplying the file overrides it.
 
 `vendor` is the product selector — not `variant`, despite what the names suggest.
-[docs/01-identity.md](docs/01-identity.md) shows the disassembly that pins it down.
+[docs/01-identity.md](docs/01-identity.md) shows how that was established.
 
 ## What else is in here
 
@@ -40,7 +40,7 @@ the device runs the fallback and reports as a Knob 1. Supplying the file overrid
 | --- | --- |
 | [01-identity.md](docs/01-identity.md) | The identity mechanism, with the disassembly |
 | [02-bootloader.md](docs/02-bootloader.md) | Two ways into the ROM bootloader, backup and restore |
-| [03-macos-hid.md](docs/03-macos-hid.md) | Why macOS needs `sudo`, and why that's still unexplained |
+| [03-macos-hid.md](docs/03-macos-hid.md) | Why macOS needs `sudo` and Windows doesn't |
 | [04-rpc-surface.md](docs/04-rpc-surface.md) | All 36 RPC methods, most undocumented |
 | [05-wallpaper.md](docs/05-wallpaper.md) | Putting your own images on the display |
 | [06-recovery.md](docs/06-recovery.md) | Getting out of trouble |
@@ -52,7 +52,8 @@ the MAX77972 charger.
 
 ## Requirements
 
-- A Work Louder Knob 1 (or Framer F1) on USB, **not** Bluetooth
+- A Work Louder Knob 1 (or Framer F1) connected over **USB**. It pairs over Bluetooth too,
+  but the bootloader only exists over USB, so flashing needs the cable.
 - Node 18+
 - `npm install` (only dependency is [`node-hid`](https://github.com/node-hid/node-hid))
 - The Work Louder Input app **quit** — it holds the device
