@@ -1,0 +1,16 @@
+{
+  "name": "knob1-framer-f1",
+  "version": "1.0.0",
+  "description": "Make a Work Louder Knob 1 identify as a Framer F1, and reach the rest of what its firmware already exposes",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "identify": "node tools/identify.mjs"
+  },
+  "dependencies": {
+    "node-hid": "^3.1.2"
+  }
+}

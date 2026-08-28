@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+
+# Never commit device dumps or vendor firmware. Flash images contain your device's
+# MAC, Bluetooth pairings and NVS state, and the firmware is Work Louder's.
+*.bin
+backups/
